@@ -1,0 +1,17 @@
+/* CSS Document */
+
+*{
+	margin: 0;
+}
+
+.alert-aling{
+	text-align: center;
+}
+
+#areaLogin{
+	position: absolute;
+	margin: -110px 0 0 -150px;
+	width: 300px;
+	left: 50%;
+	top: 50%;
+}
