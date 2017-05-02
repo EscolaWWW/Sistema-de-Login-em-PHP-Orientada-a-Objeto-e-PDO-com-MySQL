@@ -17,13 +17,11 @@ if($_GET['sair'] == "sim"){
 }
 //CADASTRANDO O FUNCIONARIO
 if(isset($_POST['btCadastrar'])){
-	$respo = $objFunc->queryInsert($_POST);	
-	echo '<script type="text/javascript">alert("'.$respo.'");</script>';
-	/*if($objFunc->queryInsert($_POST) == 'ok'){
+	if($objFunc->queryInsert($_POST) == 'ok'){
 		header('location: /aulas/login/admin/funcionario');
 	}else{
 		echo '<script type="text/javascript">alert("Erro em cadastrar");</script>';
-	}*/
+	}
 }
 //ALTERANDO OS DADOS DO FUNCIONARIO
 if(isset($_POST['btAlterar'])){
