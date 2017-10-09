@@ -38,7 +38,7 @@ if(isset($_POST['btLogar'])){
             	<button type="submit" name="btLogar" class="btn btn-primary btn-block">Logar</button> 
             </div>
         </form>
-        <?php if($_GET["login"] == "error"){ ?>
+        <?php if(isset($_GET["login"]) == "error"){ ?>
         <div class="alert alert-danger alert-block alert-aling" role="alert">Ops! E-mail ou Senha estão errado</div>
         <?php } ?>
 	</div>
