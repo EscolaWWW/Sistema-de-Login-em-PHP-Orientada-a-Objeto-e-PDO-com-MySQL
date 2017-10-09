@@ -10,15 +10,15 @@ session_start();
 if($_SESSION["logado"] == "sim"){
 	$objFunc->funcionarioLogado($_SESSION['func']);
 }else{
-	header("location: /aulas/login"); 
+	header("location: /login"); 
 }
-if($_GET['sair'] == "sim"){
+if(isset($_GET['sair']) == "sim"){
 	$objFunc->sairFuncionario();
 }
 //CADASTRANDO O FUNCIONARIO
 if(isset($_POST['btCadastrar'])){
 	if($objFunc->queryInsert($_POST) == 'ok'){
-		header('location: /aulas/login/admin/funcionario');
+		header('location: /login/admin/funcionario');
 	}else{
 		echo '<script type="text/javascript">alert("Erro em cadastrar");</script>';
 	}
@@ -37,7 +37,7 @@ if(isset($_GET['acao'])){
 		case 'edit': $func = $objFunc->querySeleciona($_GET['func']); break;
 		case 'delet': 
 			if($objFunc->queryDelete($_GET['func']) == 'ok'){
-				header('location: /aulas/login/admin/funcionario');
+				header('location: /login/admin/funcionario');
 			}else{
 				echo '<script type="text/javascript">alert("Erro em deletar");</script>';
 			}
@@ -60,8 +60,8 @@ if(isset($_GET['acao'])){
 <nav class="navbar navbar-inverse navbar-radius">
   <div class="container-fluid">
     <ul class="nav navbar-nav">
-      <li><a href="/aulas/login/admin">Home</a></li>
-      <li class="active"><a href="/aulas/login/admin/funcionario">Funcionários</a></li>
+      <li><a href="../../admin">Home</a></li>
+      <li class="active"><a href="#x">Funcionários</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#"><span class="glyphicon glyphicon-user"></span> <?=$_SESSION['nome']?></a></li>
