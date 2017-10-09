@@ -11,7 +11,7 @@ if($_SESSION["logado"] == "sim"){
 	header("location: /aulas/login"); 
 }
 
-if($_GET['sair'] == "sim"){
+if(isset($_GET['sair']) == "sim"){
 	$objFunc->sairFuncionario();
 }
 ?>
@@ -31,7 +31,7 @@ if($_GET['sair'] == "sim"){
   <div class="container-fluid">
     <ul class="nav navbar-nav">
       <li class="active"><a href="#">Home</a></li>
-      <li><a href="/aulas/login/admin/funcionario">Funcionários</a></li>
+      <li><a href="funcionario">Funcionários</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#"><span class="glyphicon glyphicon-user"></span> <?=$_SESSION['nome']?></a></li>
