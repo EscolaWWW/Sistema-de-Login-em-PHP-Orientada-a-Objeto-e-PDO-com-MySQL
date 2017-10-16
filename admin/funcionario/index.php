@@ -26,7 +26,7 @@ if(isset($_POST['btCadastrar'])){
 //ALTERANDO OS DADOS DO FUNCIONARIO
 if(isset($_POST['btAlterar'])){
 	if($objFunc->queryUpdade($_POST) == 'ok'){
-		header('location: ?acao=edit&func='.$objFc->base64($_POST['func'],1));
+		header('location: ?acao=edit&func='.$_GET['func']);
 	}else{
 		echo '<script type="text/javascript">alert("Erro em atualizar");</script>';
 	}
